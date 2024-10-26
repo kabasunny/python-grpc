@@ -1,0 +1,20 @@
+syntax = "proto3";  // プロトコルバッファのバージョンを指定
+
+// GetStockServiceというサービスを定義
+service GetStockService {
+  // GetStockDataというRPCメソッドを定義
+  rpc GetStockData (GetStockRequest) returns (GetStockResponse) {}
+}
+
+// リクエストメッセージを定義
+message GetStockRequest {
+  string ticker = 1;  // 銘柄コードを格納するフィールド
+}
+
+// レスポンスメッセージを定義
+message GetStockResponse {
+  map<string, double> stock_data = 1;  // 株価データを含むフィールド  // キーが文字列で、値が浮動小数点数のリストであるマップ
+}
+
+
+// python -m grpc_tools.protoc -I=src/proto --python_out=src/proto --grpc_python_out=src/proto src/proto/get_stock.proto
