@@ -18,3 +18,11 @@ message GetStockResponse {
 
 
 // python -m grpc_tools.protoc -I=src/proto --python_out=src/proto --grpc_python_out=src/proto src/proto/get_stock.proto
+// python -m grpc_tools.protoc -I protos --python_out=protos --grpc_python_out=protos protos/get_stock.proto
+
+
+// // python -m grpc_tools.protoc -I protos --python_out=. --grpc_python_out=. protos/get_stock.proto 
+// -I protos は、プロトコルバッファ (.proto) ファイルが存在するディレクトリ
+// --python_out=. は、生成された Python コードの出力ディレクトリを指定
+// --grpc_python_out=. は、gRPC サービスのために生成される Python コードの出力ディレクトリを指定
+// proto/get_stock.proto は、変換するプロトコルバッファファイルのパスです。
