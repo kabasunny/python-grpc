@@ -3,9 +3,6 @@ import unittest  # 標準的なテストフレームワークをインポート
 import grpc
 from concurrent import futures
 from get_stock_grpc import GetStockService, serve  # サービスとサーバー起動関数をインポート
-import sys
-sys.path.insert(0, '<プロジェクトのルートディレクトリのパス>')
-
 import get_stock_pb2 as get_stock_pb2 #  "." を追加
 import get_stock_pb2_grpc as  get_stock_pb2_grpc
 from get_stock_service import get_stock_data
